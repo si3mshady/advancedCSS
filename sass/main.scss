@@ -34,8 +34,10 @@ $color-tertiary-dark: #5643fa;
 
 
 //GRID
-$grid-width:  71rem;
-$gutter-vertical: 2.5rem;
+// $grid-width:  71rem;
+$grid-width: 114rem;
+// $gutter-vertical: 2.5rem;
+$gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
 
 
@@ -235,6 +237,7 @@ body {
 
 .btn::after {
     content: '';
+
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -295,11 +298,11 @@ body {
 
     }
 
+    
     .col-1-of-3 {
-        width: calc((100% - ( 2 * #{$gutter-horizontal} )) / 3);
-              
-  
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
     }
+
 
     .col-2-of-3 {
         width: calc(2 * ((100% - ( 2 * #{$gutter-horizontal} )) / 3) + #{$gutter-horizontal} );
@@ -358,6 +361,7 @@ body {
 .u-margin-bottom-big { margin-bottom: 8rem; }
 .u-margin-bottom-medium { margin-bottom: 4rem; }
 .u-margin-bottom-small { margin-bottom: 1.5rem; }
+.u-margin-top-big { margin-top: 8rem; }
 
 .heading-tertiary {
     font-size: 1.3rem;
@@ -536,6 +540,14 @@ body {
             &-1 {
                 background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark)
             }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom,$color-primary-light,$color-primary-dark)
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary-dark)
+            }
         }
     }
    
@@ -561,10 +573,12 @@ body {
                  url("../img/nat-5.jpg");
             }
             &--2 {
-                background-image: url("../img/nat-5.jpg");
+                background-image: linear-gradient(to right bottom,$color-primary-light,$color-primary-dark),
+                url("../img/nat-6.jpg");
             }
             &--3 {
-                background-image: url("../img/nat-5.jpg");
+                background-image: linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary-dark),
+                url("../img/nat-7.jpg");
             }
     }
 
@@ -591,6 +605,18 @@ body {
             rgba($color-secondary-light, .85),
             rgba($color-secondary-dark, .85));
         }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, .85),
+            rgba($color-primary-dark, .85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom,
+            rgba($color-tertiary-light, .85),
+            rgba($color-tertiary-dark, .85));
+        }
     }
 
     &__details {
@@ -613,9 +639,40 @@ body {
         }
     }
 
+   //BACK SIDE Styling
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+         text-align: center;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 8rem;
+    }
+
+     &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+     }
+
+     &__price-value {
+         font-size: 6rem;
+         font-weight: 100;
+     }
+
+
+    
+
   }
 
   //.card:hover  .card_side {
 
+ 
 
-    
+   
